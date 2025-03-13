@@ -13,7 +13,6 @@ export function ThemeToggle() {
     <Button
       variant="outline"
       size="icon"
-      className="cursor-pointer"
       onClick={() => {
         if (theme === "light") {
           setTheme("dark");
