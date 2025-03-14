@@ -1,12 +1,8 @@
-"use client";
-
 import { DynamicSubtitle } from "@/components/dynamic-subtitle";
 import { DynamicTitle } from "@/components/dynamic-title";
+import { Footer } from "@/components/footer";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
-import { Github, Linkedin } from "lucide-react";
-import Link from "next/link";
 
 export default function Page() {
   return (
@@ -32,32 +28,7 @@ export default function Page() {
         </div>
       </div>
 
-      <footer className="flex justify-between">
-        <div className="flex gap-2">
-          <Link
-            href="https://www.linkedin.com/in/davipessoa93/"
-            target="_blank"
-            className="hover:text-muted-foreground"
-          >
-            <Linkedin className="h-5 w-5" />
-          </Link>
-          <Link
-            href="https://github.com/davipess93"
-            target="_blank"
-            className="hover:text-muted-foreground"
-          >
-            <Github className="h-5 w-5" />
-          </Link>
-        </div>
-
-        <Link
-          href="https://wa.me/5586998164238?text=Oi,%20Davi!%20Vi%20seu%20portfólio%20e%20curti%20bastante!%20Bora%20conversar?"
-          target="_blank"
-          className="underline hover:text-muted-foreground"
-        >
-          Vamos trabalhar juntos?
-        </Link>
-      </footer>
+      <Footer />
     </div>
   );
 }
