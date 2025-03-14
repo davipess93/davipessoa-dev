@@ -1,5 +1,5 @@
-import { Github, Linkedin } from "lucide-react";
-import Link from "next/link";
+import { Github, Linkedin } from 'lucide-react'
+import Link from 'next/link'
 
 export function Footer() {
   return (
@@ -29,5 +29,5 @@ export function Footer() {
         Vamos trabalhar juntos?
       </Link>
     </footer>
-  );
+  )
 }

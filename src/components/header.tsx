@@ -1,5 +1,5 @@
-import { ThemeToggle } from "./theme/theme-toggle";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { ThemeToggle } from './theme/theme-toggle'
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 
 export function Header() {
   return (
@@ -13,5 +13,5 @@ export function Header() {
       </div>
       <ThemeToggle />
     </div>
-  );
+  )
 }

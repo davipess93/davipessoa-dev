@@ -1,7 +1,7 @@
-import { DynamicSubtitle } from "@/components/dynamic-subtitle";
-import { DynamicTitle } from "@/components/dynamic-title";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import { DynamicSubtitle } from '@/components/dynamic-subtitle'
+import { DynamicTitle } from '@/components/dynamic-title'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
 
 export default function Page() {
   return (
@@ -20,5 +20,5 @@ export default function Page() {
 
       <Footer />
     </div>
-  );
+  )
 }
