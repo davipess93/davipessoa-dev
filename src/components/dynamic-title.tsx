@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import { TypeAnimation } from "react-type-animation";
 
-export function DevSkillsAnimation() {
+export function DynamicTitle() {
   return (
     <TypeAnimation
       sequence={[
@@ -11,10 +11,10 @@ export function DevSkillsAnimation() {
         `DESENVOLVEDOR\nMOBILE 📱`,
         2000,
       ]}
-      className="text-4xl font-extrabold text-center md:text-7xl md:text-left whitespace-pre-line"
+      className="text-4xl font-extrabold text-center sm:text-5xl xl:text-7xl lg:text-left whitespace-pre-line md:mb-4 xl:h-[144px] h-[96px]"
       wrapper="h1"
-      speed={30}
+      speed={50}
       repeat={Infinity}
     />
-  )
+  );
 }
