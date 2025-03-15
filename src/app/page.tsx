@@ -9,12 +9,14 @@ export default function Page() {
       <div>
         <Header />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <main className="my-8 min-h-[120px] md:my-0">
+        <div className="my-8 grid grid-cols-1 lg:grid-cols-2">
+          <main className="mb-8 h-[96px] sm:h-[144px] lg:h-[176px]">
             <DynamicTitle />
             <DynamicSubtitle />
           </main>
-          <aside></aside>
+          <aside>
+            <h3></h3>
+          </aside>
         </div>
       </div>
 
