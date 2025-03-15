@@ -24,7 +24,7 @@ export function Footer() {
       <Link
         href="https://wa.me/5586998164238?text=Oi,%20Davi!%20Vi%20seu%20portfólio%20e%20curti%20bastante!%20Bora%20conversar?"
         target="_blank"
-        className="underline hover:text-muted-foreground"
+        className="hover:text-muted-foreground underline"
       >
         Vamos trabalhar juntos?
       </Link>

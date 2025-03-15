@@ -1,10 +1,11 @@
-import { ThemeProvider } from '@/components/theme/theme-provider'
 import './globals.css'
+
+import { ThemeProvider } from '@/components/theme/theme-provider'
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -13,7 +14,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="light"
           enableSystem
-          disableTransitionOnChange
+          disableTransitionOnChange={false}
         >
           {children}
         </ThemeProvider>

@@ -5,12 +5,12 @@ import { Header } from '@/components/header'
 
 export default function Page() {
   return (
-    <div className="min-h-screen flex flex-col justify-between p-6 max-w-[1600px] m-auto">
+    <div className="m-auto flex min-h-screen max-w-[1600px] flex-col justify-between p-6">
       <div>
         <Header />
 
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <main className="my-8 md:my-0 min-h-[120px]">
+          <main className="my-8 min-h-[120px] md:my-0">
             <DynamicTitle />
             <DynamicSubtitle />
           </main>
