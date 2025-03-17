@@ -28,7 +28,7 @@ export default function Page() {
                   <AccordionTrigger className="text-lg font-medium">
                     Sobre mim
                   </AccordionTrigger>
-                  <AccordionContent>
+                  <AccordionContent className="animate-once">
                     Sou um desenvolvedor web full stack que gosta de inovar em
                     cada projeto, explorando novas funcionalidades e integrando
                     ferramentas de terceiros para otimizar o desenvolvimento.
@@ -92,60 +92,6 @@ export default function Page() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-
-              {/* <div>
-                <h4 className="text-xl font-medium">Sobre mim</h4>
-                <p className="font-light">
-                  Sou um desenvolvedor web full stack que gosta de inovar em
-                  cada projeto, explorando novas funcionalidades e integrando
-                  ferramentas de terceiros para otimizar o desenvolvimento.
-                  Minha missão é criar soluções eficientes e impactantes, sempre
-                  focado em entregar aplicações de alta qualidade. Estou
-                  constantemente em busca de aprendizado e aprimoramento,
-                  garantindo que cada projeto não apenas atenda, mas supere as
-                  necessidades e expectativas de quem confia no meu trabalho.
-                </p>
-              </div>
-              
-              <div>
-                <h4 className="text-xl font-medium">Carreira</h4>
-                <p className="font-light">
-                  Sou um desenvolvedor web full stack que gosta de inovar em
-                  cada projeto, explorando novas funcionalidades e integrando
-                  ferramentas de terceiros para otimizar o desenvolvimento.
-                  Minha missão é criar soluções eficientes e impactantes, sempre
-                  focado em entregar aplicações de alta qualidade. Estou
-                  constantemente em busca de aprendizado e aprimoramento,
-                  garantindo que cada projeto não apenas atenda, mas supere as
-                  necessidades e expectativas de quem confia no meu trabalho.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-xl font-medium">Tecnologias</h4>
-                <p className="font-light">
-                  Sou um desenvolvedor web full stack que gosta de inovar em
-                  cada projeto, explorando novas funcionalidades e integrando
-                  ferramentas de terceiros para otimizar o desenvolvimento.
-                  Minha missão é criar soluções eficientes e impactantes, sempre
-                  focado em entregar aplicações de alta qualidade. Estou
-                  constantemente em busca de aprendizado e aprimoramento,
-                  garantindo que cada projeto não apenas atenda, mas supere as
-                  necessidades e expectativas de quem confia no meu trabalho.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-xl font-medium">Portfólio</h4>
-                <p className="font-light">
-                  Sou um desenvolvedor web full stack que gosta de inovar em
-                  cada projeto, explorando novas funcionalidades e integrando
-                  ferramentas de terceiros para otimizar o desenvolvimento.
-                  Minha missão é criar soluções eficientes e impactantes, sempre
-                  focado em entregar aplicações de alta qualidade. Estou
-                  constantemente em busca de aprendizado e aprimoramento,
-                  garantindo que cada projeto não apenas atenda, mas supere as
-                  necessidades e expectativas de quem confia no meu trabalho.
-                </p>
-              </div> */}
             </div>
           </aside>
         </div>
