@@ -16,16 +16,18 @@ export default function Page() {
         <Header className="animate-fade" />
 
         <div className="my-8 grid grid-cols-1 lg:grid-cols-2">
-          <main className="mb-8 h-[96px] sm:h-[144px] lg:h-[176px]">
+          <main className="mb-6 h-[96px] sm:h-[144px] lg:h-[176px]">
             <DynamicTitle />
             <DynamicSubtitle />
           </main>
           <aside className="animate-fade-up">
-            <h3 className="mb-4 text-2xl font-semibold">Meu Currículo / CV</h3>
+            <h3 className="text-xl font-semibold sm:text-2xl">
+              Meu Currículo / CV
+            </h3>
             <div>
               <Accordion type="single" defaultValue="about-me" collapsible>
                 <AccordionItem value="about-me">
-                  <AccordionTrigger className="text-lg font-medium">
+                  <AccordionTrigger className="text-md font-medium sm:text-lg">
                     Sobre mim
                   </AccordionTrigger>
                   <AccordionContent className="animate-once">
@@ -42,7 +44,7 @@ export default function Page() {
                 </AccordionItem>
 
                 <AccordionItem value="career">
-                  <AccordionTrigger className="text-lg font-medium">
+                  <AccordionTrigger className="text-md font-medium sm:text-lg">
                     Carreira
                   </AccordionTrigger>
                   <AccordionContent>
@@ -59,7 +61,7 @@ export default function Page() {
                 </AccordionItem>
 
                 <AccordionItem value="tec-skills">
-                  <AccordionTrigger className="text-lg font-medium">
+                  <AccordionTrigger className="text-md font-medium sm:text-lg">
                     Tecnologias
                   </AccordionTrigger>
                   <AccordionContent>
@@ -76,7 +78,7 @@ export default function Page() {
                 </AccordionItem>
 
                 <AccordionItem value="portfolio">
-                  <AccordionTrigger className="text-lg font-medium">
+                  <AccordionTrigger className="text-md font-medium sm:text-lg">
                     Portfólio
                   </AccordionTrigger>
                   <AccordionContent>
