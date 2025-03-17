@@ -23,7 +23,7 @@ export default function Page() {
           <aside className="animate-fade-up">
             <h3 className="mb-4 text-2xl font-semibold">Meu Currículo / CV</h3>
             <div>
-              <Accordion type="single" collapsible>
+              <Accordion type="single" defaultValue="about-me" collapsible>
                 <AccordionItem value="about-me">
                   <AccordionTrigger className="text-lg font-medium">
                     Sobre mim
