@@ -13,14 +13,14 @@ export default function Page() {
   return (
     <div className="m-auto flex min-h-screen max-w-[1600px] flex-col justify-between p-6">
       <div>
-        <Header />
+        <Header className="animate-fade" />
 
         <div className="my-8 grid grid-cols-1 lg:grid-cols-2">
           <main className="mb-8 h-[96px] sm:h-[144px] lg:h-[176px]">
             <DynamicTitle />
             <DynamicSubtitle />
           </main>
-          <aside>
+          <aside className="animate-fade-up">
             <h3 className="mb-4 text-2xl font-semibold">Meu Currículo / CV</h3>
             <div>
               <Accordion type="single" collapsible>
@@ -97,7 +97,7 @@ export default function Page() {
         </div>
       </div>
 
-      <Footer />
+      <Footer className="animate-fade" />
     </div>
   )
 }

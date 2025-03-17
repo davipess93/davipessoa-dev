@@ -1,9 +1,12 @@
 import { Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
-export function Footer() {
+export function Footer({
+  className,
+  ...rest
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <footer className="flex justify-between">
+    <footer className={`flex justify-between ${className}`} {...rest}>
       <div className="flex gap-2">
         <Link
           href="https://www.linkedin.com/in/davipessoa93/"

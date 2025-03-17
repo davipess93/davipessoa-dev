@@ -1,9 +1,14 @@
+import * as React from 'react'
+
 import { ThemeToggle } from './theme/theme-toggle'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 
-export function Header() {
+export function Header({
+  className,
+  ...rest
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="flex justify-between">
+    <div className={`flex justify-between ${className}`} {...rest}>
       <div className="flex items-center gap-2">
         <Avatar>
           <AvatarImage src="https://avatars.githubusercontent.com/u/47341160?v=4" />
