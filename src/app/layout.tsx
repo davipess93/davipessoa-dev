@@ -1,13 +1,7 @@
 import './globals.css'
 
-import { Inter } from 'next/font/google'
-
 import { ThemeProvider } from '@/components/theme/theme-provider'
-
-const inter = Inter({
-  weight: '400',
-  subsets: ['latin'],
-})
+import { inter } from '@/utils/fonts'
 
 export default function RootLayout({
   children,
