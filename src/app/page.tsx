@@ -2,12 +2,14 @@ import { DynamicSubtitle } from '@/components/dynamic-subtitle'
 import { DynamicTitle } from '@/components/dynamic-title'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
+import { TechSkillsLabel } from '@/components/tech-skills-label'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { techSkills } from '@/utils/tech-skills'
 
 export default function Page() {
   return (
@@ -32,11 +34,10 @@ export default function Page() {
                   </AccordionTrigger>
                   <AccordionContent className="animate-once">
                     Sou um desenvolvedor web full stack que gosta de inovar em
-                    cada projeto, explorando novas funcionalidades e integrando
-                    ferramentas de terceiros para otimizar o desenvolvimento.
-                    Minha missão é criar soluções eficientes e impactantes,
-                    sempre focado em entregar aplicações de alta qualidade.
-                    Estou constantemente em busca de aprendizado e
+                    cada projeto, explorando novas funcionalidades e integrações
+                    de ferramentas para otimizar o desenvolvimento. Minha missão
+                    é criar aplicações eficientes, impactantes e de alta
+                    qualidade. Estou constantemente em busca de aprendizado e
                     aprimoramento, garantindo que cada projeto não apenas
                     atenda, mas supere as necessidades e expectativas de quem
                     confia no meu trabalho.
@@ -47,33 +48,22 @@ export default function Page() {
                   <AccordionTrigger className="text-md font-medium sm:text-lg">
                     Carreira
                   </AccordionTrigger>
-                  <AccordionContent>
-                    Sou um desenvolvedor web full stack que gosta de inovar em
-                    cada projeto, explorando novas funcionalidades e integrando
-                    ferramentas de terceiros para otimizar o desenvolvimento.
-                    Minha missão é criar soluções eficientes e impactantes,
-                    sempre focado em entregar aplicações de alta qualidade.
-                    Estou constantemente em busca de aprendizado e
-                    aprimoramento, garantindo que cada projeto não apenas
-                    atenda, mas supere as necessidades e expectativas de quem
-                    confia no meu trabalho.
-                  </AccordionContent>
+                  <AccordionContent></AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="tec-skills">
                   <AccordionTrigger className="text-md font-medium sm:text-lg">
                     Tecnologias
                   </AccordionTrigger>
-                  <AccordionContent>
-                    Sou um desenvolvedor web full stack que gosta de inovar em
-                    cada projeto, explorando novas funcionalidades e integrando
-                    ferramentas de terceiros para otimizar o desenvolvimento.
-                    Minha missão é criar soluções eficientes e impactantes,
-                    sempre focado em entregar aplicações de alta qualidade.
-                    Estou constantemente em busca de aprendizado e
-                    aprimoramento, garantindo que cada projeto não apenas
-                    atenda, mas supere as necessidades e expectativas de quem
-                    confia no meu trabalho.
+                  <AccordionContent className="flex flex-wrap gap-4">
+                    {techSkills.map(({ src, alt, name }, index) => (
+                      <TechSkillsLabel
+                        src={src}
+                        alt={alt}
+                        label={name}
+                        key={index}
+                      />
+                    ))}
                   </AccordionContent>
                 </AccordionItem>
 
@@ -81,17 +71,7 @@ export default function Page() {
                   <AccordionTrigger className="text-md font-medium sm:text-lg">
                     Portfólio
                   </AccordionTrigger>
-                  <AccordionContent>
-                    Sou um desenvolvedor web full stack que gosta de inovar em
-                    cada projeto, explorando novas funcionalidades e integrando
-                    ferramentas de terceiros para otimizar o desenvolvimento.
-                    Minha missão é criar soluções eficientes e impactantes,
-                    sempre focado em entregar aplicações de alta qualidade.
-                    Estou constantemente em busca de aprendizado e
-                    aprimoramento, garantindo que cada projeto não apenas
-                    atenda, mas supere as necessidades e expectativas de quem
-                    confia no meu trabalho.
-                  </AccordionContent>
+                  <AccordionContent></AccordionContent>
                 </AccordionItem>
               </Accordion>
             </div>
