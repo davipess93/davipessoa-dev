@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import { DynamicSubtitle } from '@/components/dynamic-subtitle'
 import { DynamicTitle } from '@/components/dynamic-title'
 import { Footer } from '@/components/footer'
@@ -71,7 +73,18 @@ export default function Page() {
                   <AccordionTrigger className="text-md font-medium sm:text-lg">
                     Portfólio
                   </AccordionTrigger>
-                  <AccordionContent></AccordionContent>
+                  <AccordionContent className="flex flex-col items-center gap-4 md:items-start">
+                    <Image
+                      src="/assets/design-components.svg"
+                      alt="building portfolio"
+                      width={300}
+                      height={300}
+                      className="dark:invert"
+                    />
+                    <span className="text-muted-foreground">
+                      Em construção...
+                    </span>
+                  </AccordionContent>
                 </AccordionItem>
               </Accordion>
             </div>
