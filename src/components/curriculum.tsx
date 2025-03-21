@@ -1,4 +1,8 @@
+'use client'
+
+import axios from 'axios'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 import { TechSkillsLabel } from '@/components/tech-skills-label'
 import {
@@ -9,7 +13,59 @@ import {
 } from '@/components/ui/accordion'
 import { techSkills } from '@/utils/tech-skills'
 
+import { Skeleton } from './ui/skeleton'
+
+type TechSkill = {
+  name: string
+  src: string
+  alt: string
+}
+
+type Position = {
+  title: string
+  period: string
+}
+
+type Career = {
+  company: string
+  positions: Position[]
+}
+
+type DataScrapped = {
+  about: string
+  career: Career[]
+  techSkills: TechSkill[]
+}
+
+type GetProfileDataAPIResponse = {
+  dataScrapped: DataScrapped
+}
+
 export function Curriculum() {
+  const [hasLoadedDataProfile, setHasLoadedDataProfile] = useState(false)
+  const [about, setAbout] = useState<string>()
+
+  useEffect(() => {
+    getProfileData()
+  }, [])
+
+  async function getProfileData() {
+    setHasLoadedDataProfile(false)
+    try {
+      const {
+        data: { dataScrapped },
+      } = await axios.get<GetProfileDataAPIResponse>(
+        'http://localhost:3000/api/get-profile-data',
+      )
+
+      setAbout(dataScrapped.about)
+
+      setHasLoadedDataProfile(true)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
       <h3 className="text-xl font-semibold sm:text-2xl">Meu Currículo / CV</h3>
@@ -19,14 +75,17 @@ export function Curriculum() {
             <AccordionTrigger className="text-md font-medium sm:text-lg">
               Sobre mim
             </AccordionTrigger>
-            <AccordionContent className="animate-once">
-              Sou um desenvolvedor web full stack que gosta de inovar em cada
-              projeto, explorando novas funcionalidades e integrações de
-              ferramentas para otimizar o desenvolvimento. Minha missão é criar
-              aplicações eficientes, impactantes e de alta qualidade. Estou
-              constantemente em busca de aprendizado e aprimoramento, garantindo
-              que cada projeto não apenas atenda, mas supere as necessidades e
-              expectativas de quem confia no meu trabalho.
+            <AccordionContent>
+              {hasLoadedDataProfile ? (
+                <p>{about}</p>
+              ) : (
+                <div className="space-y-3">
+                  <Skeleton className="h-4 w-[650px]" />
+                  <Skeleton className="h-4 w-[700px]" />
+                  <Skeleton className="h-4 w-[700px]" />
+                  <Skeleton className="h-4 w-[350px]" />
+                </div>
+              )}
             </AccordionContent>
           </AccordionItem>
 
