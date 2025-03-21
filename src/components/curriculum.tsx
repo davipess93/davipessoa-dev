@@ -4,14 +4,12 @@ import axios from 'axios'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-import { TechSkillsLabel } from '@/components/tech-skills-label'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { techSkills } from '@/utils/tech-skills'
 
 import { Skeleton } from './ui/skeleton'
 
@@ -33,7 +31,7 @@ type Career = {
 
 type DataScrapped = {
   about: string
-  career: Career[]
+  careers: Career[]
   techSkills: TechSkill[]
 }
 
@@ -44,6 +42,8 @@ type GetProfileDataAPIResponse = {
 export function Curriculum() {
   const [hasLoadedDataProfile, setHasLoadedDataProfile] = useState(false)
   const [about, setAbout] = useState<string>()
+  const [techSkills, setTechSkills] = useState<TechSkill[]>([])
+  const [careers, setCareers] = useState<Career[]>([])
 
   useEffect(() => {
     getProfileData()
@@ -58,7 +58,11 @@ export function Curriculum() {
         'http://localhost:3000/api/get-profile-data',
       )
 
+      console.log(dataScrapped.careers)
+
       setAbout(dataScrapped.about)
+      setTechSkills(dataScrapped.techSkills)
+      setCareers(dataScrapped.careers)
 
       setHasLoadedDataProfile(true)
     } catch (error) {
@@ -93,17 +97,58 @@ export function Curriculum() {
             <AccordionTrigger className="text-md font-medium sm:text-lg">
               Carreira
             </AccordionTrigger>
-            <AccordionContent></AccordionContent>
+            <AccordionContent className="space-y-4">
+              {hasLoadedDataProfile
+                ? careers.map((career, i) => (
+                    <div key={i}>
+                      <span className="text-xl font-medium">
+                        {career.company}
+                      </span>
+                      <div className="flex flex-col">
+                        {career.positions.map((position, j) => (
+                          <span
+                            className="text-muted-foreground"
+                            key={`${i}${j}`}
+                          >
+                            {position.title} / {position.period}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))
+                : Array.from({ length: 2 }).map((_, i) => (
+                    <div key={i} className="space-y-2">
+                      <Skeleton className="h-5 w-20" />
+                      <Skeleton className="w-78 h-4" />
+                      <Skeleton className="w-58 h-4" />
+                    </div>
+                  ))}
+            </AccordionContent>
           </AccordionItem>
 
           <AccordionItem value="tec-skills">
             <AccordionTrigger className="text-md font-medium sm:text-lg">
               Tecnologias
             </AccordionTrigger>
-            <AccordionContent className="flex flex-wrap gap-4">
-              {techSkills.map(({ src, alt, name }, index) => (
-                <TechSkillsLabel src={src} alt={alt} label={name} key={index} />
-              ))}
+            <AccordionContent className="flex flex-wrap gap-1">
+              {hasLoadedDataProfile ? (
+                techSkills.map(({ src, alt }, index) => (
+                  <img src={src} alt={alt} key={index} />
+                ))
+              ) : (
+                <>
+                  <Skeleton className="h-8 w-24 rounded-none" />
+                  <Skeleton className="h-8 w-28 rounded-none" />
+                  <Skeleton className="w-26 h-8 rounded-none" />
+                  <Skeleton className="h-8 w-32 rounded-none" />
+                  <Skeleton className="h-8 w-28 rounded-none" />
+                  <Skeleton className="w-26 h-8 rounded-none" />
+                  <Skeleton className="w-26 h-8 rounded-none" />
+                  <Skeleton className="w-30 h-8 rounded-none" />
+                  <Skeleton className="w-26 h-8 rounded-none" />
+                  <Skeleton className="h-8 w-32 rounded-none" />
+                </>
+              )}
             </AccordionContent>
           </AccordionItem>
 

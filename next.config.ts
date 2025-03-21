@@ -13,6 +13,13 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         search: '',
       },
+      {
+        hostname: 'img.shields.io',
+        pathname: '/badge/**',
+        protocol: 'https',
+        port: '',
+        search: '*',
+      },
     ],
   },
 }

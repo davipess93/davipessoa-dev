@@ -5,7 +5,7 @@ type Career = {
 
 type ScrappedReadme = {
   about: string
-  career: Career[]
+  careers: Career[]
   techSkills: { name: string; src: string; alt: string }[]
 }
 
@@ -13,7 +13,7 @@ export function scrapReadme(readme: string) {
   const lines = readme.split('\n')
   const scrappedReadme: ScrappedReadme = {
     about: '',
-    career: [],
+    careers: [],
     techSkills: [],
   }
 
@@ -44,7 +44,7 @@ export function scrapReadme(readme: string) {
         company: line.replace('- ', '').trim(),
         positions: [],
       }
-      scrappedReadme.career.push(currentCompany)
+      scrappedReadme.careers.push(currentCompany)
     } else if (line.startsWith('- ') && line.includes('**') && currentCompany) {
       const [position, period] = line
         .replace('- ', '')
