@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { davipessoadevApi } from '@/lib/axios'
+import { websiteApi } from '@/lib/axios'
 
 import { Skeleton } from './ui/skeleton'
 
@@ -54,7 +54,7 @@ export function Curriculum() {
     try {
       const {
         data: { dataScrapped },
-      } = await davipessoadevApi.get<GetProfileDataAPIResponse>(
+      } = await websiteApi.get<GetProfileDataAPIResponse>(
         '/api/get-profile-data',
       )
 

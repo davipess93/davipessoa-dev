@@ -9,8 +9,8 @@ const githubApi = axios.create({
   },
 })
 
-const davipessoadevApi = axios.create({
-  baseURL: process.env.DAVIPESSOA_DEV_API,
+const websiteApi = axios.create({
+  baseURL: process.env.WEBSITE_API,
 })
 
-export { githubApi, davipessoadevApi }
+export { githubApi, websiteApi }

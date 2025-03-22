@@ -4,7 +4,9 @@ import { githubApi } from '@/lib/axios'
 
 export async function GET() {
   try {
-    const { data } = await githubApi.get('/users/davipess93')
+    const githubUser = process.env.GITHUB_USER
+
+    const { data } = await githubApi.get(`/users/${githubUser}`)
 
     return NextResponse.json({ githubUser: data })
   } catch {

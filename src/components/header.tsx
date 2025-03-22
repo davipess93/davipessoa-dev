@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { davipessoadevApi } from '@/lib/axios'
+import { websiteApi } from '@/lib/axios'
 
 import { ThemeToggle } from './theme/theme-toggle'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
@@ -62,7 +62,7 @@ export function Header({
     try {
       const {
         data: { githubUser },
-      } = await davipessoadevApi.get<GetUserAPIResponse>('/api/get-user')
+      } = await websiteApi.get<GetUserAPIResponse>('/api/get-user')
 
       setUser(githubUser)
     } catch (error) {

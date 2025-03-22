@@ -26,10 +26,13 @@ type GetAPIGithubRepos = {
 
 export async function GET() {
   try {
+    const githubUser = process.env.GITHUB_USER
+    const repository = process.env.GITHUB_REPO_README
+
     const {
       data: { content },
     } = await githubApi.get<GetAPIGithubRepos>(
-      '/repos/davipess93/davipess93/readme',
+      `/repos/${githubUser}/${repository}/readme`,
     )
 
     const decodedReadme = Buffer.from(content, 'base64').toString('utf-8')
