@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react'
+import { HTMLAttributes, useEffect, useState } from 'react'
 
 import { websiteApi } from '@/lib/axios'
 
@@ -48,13 +48,10 @@ type GetUserAPIResponse = {
   githubUser: GithubUser
 }
 
-export function Header({
-  className,
-  ...rest
-}: React.HTMLAttributes<HTMLDivElement>) {
-  const [user, setUser] = React.useState<GithubUser>()
+export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
+  const [user, setUser] = useState<GithubUser>()
 
-  React.useEffect(() => {
+  useEffect(() => {
     getNameFromGithubApi()
   }, [])
 

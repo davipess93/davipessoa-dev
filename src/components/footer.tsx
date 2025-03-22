@@ -1,10 +1,33 @@
 import { Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
+import { HTMLAttributes } from 'react'
 
-export function Footer({
-  className,
-  ...rest
-}: React.HTMLAttributes<HTMLDivElement>) {
+// import { websiteApi } from '@/lib/axios'
+
+// type SocialLink = {
+//   provider: string
+//   url: string
+// }
+
+// type GetSocialLinksAPIResponse = {
+//   socialLinks: SocialLink[]
+// }
+
+export function Footer({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
+  // useEffect(() => {}, [])
+
+  // async function getSocialLinks() {
+  //   try {
+  //     const {
+  //       data: { socialLinks },
+  //     } = await websiteApi.get<GetSocialLinksAPIResponse>(
+  //       '/api/get-social-links',
+  //     )
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
   return (
     <footer className={`flex justify-between ${className}`} {...rest}>
       <div className="flex gap-2">
