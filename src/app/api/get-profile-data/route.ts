@@ -37,7 +37,7 @@ export async function GET() {
     const dataScrapped = scrapReadme(decodedReadme)
 
     return NextResponse.json({ dataScrapped })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: 'Não foi possível carregar os dados' })
   }
 }

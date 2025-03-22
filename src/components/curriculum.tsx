@@ -58,8 +58,6 @@ export function Curriculum() {
         '/api/get-profile-data',
       )
 
-      console.log(dataScrapped.careers)
-
       setAbout(dataScrapped.about)
       setTechSkills(dataScrapped.techSkills)
       setCareers(dataScrapped.careers)
