@@ -1,6 +1,6 @@
-import axios from 'axios'
 import { NextResponse } from 'next/server'
 
+import { githubApi } from '@/lib/axios'
 import { scrapReadme } from '@/utils/scrap-readme'
 
 type LinksGithubRepos = {
@@ -28,15 +28,8 @@ export async function GET() {
   try {
     const {
       data: { content },
-    } = await axios.get<GetAPIGithubRepos>(
-      'https://api.github.com/repos/davipess93/davipess93/readme',
-      {
-        headers: {
-          Accept: 'application/vnd.github+json',
-          'X-GitHub-Api-Version': '2022-11-28',
-          Authorization: `Bearer ${process.env.GITHUB_PERSONAL_KEY}`,
-        },
-      },
+    } = await githubApi.get<GetAPIGithubRepos>(
+      '/repos/davipess93/davipess93/readme',
     )
 
     const decodedReadme = Buffer.from(content, 'base64').toString('utf-8')

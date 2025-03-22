@@ -1,6 +1,5 @@
 'use client'
 
-import axios from 'axios'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
@@ -10,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { davipessoadevApi } from '@/lib/axios'
 
 import { Skeleton } from './ui/skeleton'
 
@@ -54,8 +54,8 @@ export function Curriculum() {
     try {
       const {
         data: { dataScrapped },
-      } = await axios.get<GetProfileDataAPIResponse>(
-        'http://localhost:3000/api/get-profile-data',
+      } = await davipessoadevApi.get<GetProfileDataAPIResponse>(
+        '/api/get-profile-data',
       )
 
       console.log(dataScrapped.careers)
