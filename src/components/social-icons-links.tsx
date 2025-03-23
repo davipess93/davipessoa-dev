@@ -8,7 +8,7 @@ import {
 import * as brandIcons from '@fortawesome/free-brands-svg-icons'
 import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'lucide-react'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import { websiteApi } from '@/lib/axios'
