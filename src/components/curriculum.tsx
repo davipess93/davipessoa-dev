@@ -108,7 +108,13 @@ export function Curriculum() {
                             className="text-muted-foreground"
                             key={`${i}${j}`}
                           >
-                            {position.title} / {position.period}
+                            <span className="font-semibold">
+                              {position.title}
+                            </span>{' '}
+                            /{' '}
+                            <span className="font-light">
+                              {position.period}
+                            </span>
                           </span>
                         ))}
                       </div>
