@@ -13,6 +13,8 @@ import { useEffect, useState } from 'react'
 
 import { websiteApi } from '@/lib/axios'
 
+import { Skeleton } from './ui/skeleton'
+
 type SocialLink = {
   provider: string
   url: string
@@ -76,19 +78,23 @@ export function SocialIconsLinks() {
 
   return (
     <div className="flex items-center gap-2">
-      {socialLinks.map((socialLink, index) => (
-        <Link
-          key={`${socialLink.provider}${index}`}
-          href={socialLink.url}
-          target="_blank"
-          className="hover:text-muted-foreground h-5"
-        >
-          <FontAwesomeIcon
-            style={{ width: 20, height: 20 }}
-            icon={getSocialNetworkName(socialLink.url)}
-          />
-        </Link>
-      ))}
+      {socialLinks.length > 0
+        ? socialLinks.map((socialLink, index) => (
+            <Link
+              key={`${socialLink.provider}${index}`}
+              href={socialLink.url}
+              target="_blank"
+              className="hover:text-muted-foreground h-5"
+            >
+              <FontAwesomeIcon
+                style={{ width: 20, height: 20 }}
+                icon={getSocialNetworkName(socialLink.url)}
+              />
+            </Link>
+          ))
+        : Array.from({ length: 2 }).map((_, index) => (
+            <Skeleton key={index} className="h-5 w-5 border-r-0" />
+          ))}
     </div>
   )
 }
