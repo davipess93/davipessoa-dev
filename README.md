@@ -14,8 +14,9 @@ Antes de começar, certifique-se de ter instalado:
 1. Clone o repositório:
 
    ```sh
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone git@github.com:davipess93/davipessoa-dev.git
+   mv davipessoa-dev [NOME DO SEU PROJETO]
+   cd [NOME DO SEU PROJETO]
    ```
 
 2. Instale as dependências (devido a incompatibilidades com o **npm**, use `--force`):
@@ -70,9 +71,9 @@ yarn dev
 
 O site estará disponível em **http://localhost:3000**.
 
-## 🎯 Exibindo o Site no Perfil do GitHub
+## 🎯 Exibindo o Site com dados Perfil do GitHub
 
-Para que o site seja exibido automaticamente no seu perfil do **GitHub**, o nome do repositório deve ser **exatamente o mesmo do seu nome de usuário no GitHub**.  
+Para que o site seja exibido automaticamente com dados do seu perfil do **GitHub**, o nome do repositório deve ser **exatamente o mesmo do seu nome de usuário no GitHub**.  
 
 Exemplo: Se seu usuário for `joaodev`, o repositório deve ser:
 
@@ -100,7 +101,7 @@ Crie um repositório com o mesmo nome do seu usuário no GitHub e adicione um ar
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ```
 
-Obs: na seção "carreira" pode ser colocado várias empresas, assim como a seção de "cargo e período" que são separados pela barra. Na seção "Tecnologias" também podem ser colocadas várias separadas por um espaco em branco, seguindo o de badge padrão do [Shields.io](https://shields.io/)
+Obs: na seção "carreira" pode ser colocado várias empresas, assim como a seção de "cargo e período" que são separados pela barra. Na seção "Tecnologias" também podem ser colocadas várias separadas por um espaço em branco, seguindo o de badge padrão do [Shields.io](https://shields.io/)
 
 ---
 
