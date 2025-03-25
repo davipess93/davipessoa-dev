@@ -4,7 +4,12 @@ import { NextResponse } from 'next/server'
 
 export async function GET() {
   try {
-    const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS)
+    const decodedCredentials = Buffer.from(
+      process.env.GOOGLE_CREDENTIALS,
+      'base64',
+    ).toString('utf-8')
+
+    const credentials = JSON.parse(decodedCredentials)
 
     const auth = new GoogleAuth({
       credentials,
