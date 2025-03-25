@@ -1,6 +1,8 @@
 'use client'
 
+import { CloudDownload } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import {
@@ -95,38 +97,50 @@ export function Curriculum() {
             <AccordionTrigger className="text-md font-medium sm:text-lg">
               Carreira
             </AccordionTrigger>
-            <AccordionContent className="space-y-4">
-              {hasLoadedDataProfile
-                ? careers.map((career, i) => (
-                    <div key={i}>
-                      <span className="text-xl font-medium">
-                        {career.company}
-                      </span>
-                      <div className="flex flex-col">
-                        {career.positions.map((position, j) => (
-                          <span
-                            className="text-muted-foreground"
-                            key={`${i}${j}`}
-                          >
-                            <span className="font-semibold">
-                              {position.title}
-                            </span>{' '}
-                            /{' '}
-                            <span className="font-light">
-                              {position.period}
+            <AccordionContent className="flex flex-col-reverse justify-between gap-4 md:flex-row">
+              <div className="space-y-4">
+                {hasLoadedDataProfile
+                  ? careers.map((career, i) => (
+                      <div key={i}>
+                        <span className="text-xl font-medium">
+                          {career.company}
+                        </span>
+                        <div className="flex flex-col">
+                          {career.positions.map((position, j) => (
+                            <span
+                              className="text-muted-foreground"
+                              key={`${i}${j}`}
+                            >
+                              <span className="font-semibold">
+                                {position.title}
+                              </span>{' '}
+                              /{' '}
+                              <span className="font-light">
+                                {position.period}
+                              </span>
                             </span>
-                          </span>
-                        ))}
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  ))
-                : Array.from({ length: 2 }).map((_, i) => (
-                    <div key={i} className="space-y-2">
-                      <Skeleton className="h-5 w-20" />
-                      <Skeleton className="w-78 h-4" />
-                      <Skeleton className="w-58 h-4" />
-                    </div>
-                  ))}
+                    ))
+                  : Array.from({ length: 2 }).map((_, i) => (
+                      <div key={i} className="space-y-2">
+                        <Skeleton className="h-5 w-20" />
+                        <Skeleton className="w-78 h-4" />
+                        <Skeleton className="w-58 h-4" />
+                      </div>
+                    ))}
+              </div>
+              <div>
+                <Link
+                  href="/api/get-curriculum"
+                  target="_blank"
+                  className="hover:text-muted-foreground flex gap-1"
+                >
+                  <CloudDownload className="h-5 w-5" />
+                  <span>Baixar currículo</span>
+                </Link>
+              </div>
             </AccordionContent>
           </AccordionItem>
 
