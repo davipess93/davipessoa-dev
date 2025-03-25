@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server'
 export async function GET() {
   try {
     const decodedCredentials = Buffer.from(
-      process.env.GOOGLE_CREDENTIALS,
+      process.env.GOOGLE_CREDENTIALS_BASE64,
       'base64',
     ).toString('utf-8')
 
@@ -43,7 +43,7 @@ export async function GET() {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="${fileName}"`,
+        'Content-Disposition': `attachment; filename*=UTF-8''${encodeURIComponent(fileName)}`,
       },
     })
   } catch (error) {
