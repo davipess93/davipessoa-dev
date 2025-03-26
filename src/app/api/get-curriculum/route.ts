@@ -19,7 +19,11 @@ export async function GET() {
     const service = google.drive({ version: 'v3', auth })
 
     const fileId = process.env.GOOGLE_DOC_ID
-    const fileName = process.env.GOOGLE_DOC_NAME
+    // const fileName = process.env.GOOGLE_DOC_NAME
+
+    if (!fileId) {
+      return new NextResponse('ID do documento não informado', { status: 400 })
+    }
 
     const { data } = await service.files.export(
       {
@@ -28,6 +32,13 @@ export async function GET() {
       },
       { responseType: 'stream' },
     )
+
+    const { data: fileMetaData } = await service.files.get({
+      fileId,
+      fields: 'name',
+    })
+
+    const fileName = fileMetaData.name || 'currículo.pdf'
 
     const fileChunks: Buffer[] = []
     await new Promise((resolve, reject) => {
@@ -44,6 +55,7 @@ export async function GET() {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename*=UTF-8''${encodeURIComponent(fileName)}`,
+        'X-File-Name': encodeURIComponent(fileName),
       },
     })
   } catch (error) {

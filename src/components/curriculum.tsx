@@ -1,8 +1,6 @@
 'use client'
 
-import { CloudDownload } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import {
@@ -13,6 +11,7 @@ import {
 } from '@/components/ui/accordion'
 import { websiteApi } from '@/lib/axios'
 
+import { DownloadCurriculum } from './download-curriculum'
 import { Skeleton } from './ui/skeleton'
 
 type TechSkill = {
@@ -132,14 +131,7 @@ export function Curriculum() {
                     ))}
               </div>
               <div>
-                <Link
-                  href="/api/get-curriculum"
-                  target="_blank"
-                  className="hover:text-muted-foreground flex gap-1"
-                >
-                  <CloudDownload className="h-5 w-5" />
-                  <span>Baixar currículo</span>
-                </Link>
+                <DownloadCurriculum />
               </div>
             </AccordionContent>
           </AccordionItem>

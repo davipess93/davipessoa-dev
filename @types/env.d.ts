@@ -7,6 +7,5 @@ declare namespace NodeJS {
     WEBSITE_API: string
     GOOGLE_CREDENTIALS_BASE64: string
     GOOGLE_DOC_ID: string
-    GOOGLE_DOC_NAME: string
   }
 }
