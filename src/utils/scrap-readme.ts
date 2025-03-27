@@ -26,7 +26,6 @@ export function scrapReadme(readme: string) {
   for (let line of lines) {
     line = line.trim()
 
-    // Capturar "Sobre mim"
     if (line.startsWith('## Sobre mim')) {
       isAboutSection = true
       continue
