@@ -1,6 +1,6 @@
 # Meu Site Pessoal
 
-Este projeto foi desenvolvido utilizando **Next.js**, **ShadCN/UI** e **Tailwind CSS**. Ele exibe informações diretamente do **GitHub**, então algumas configurações são necessárias para que tudo funcione corretamente.
+Este projeto foi desenvolvido utilizando **Next.js**, **ShadCN/UI** e **Tailwind CSS**. Ele exibe informações diretamente do **GitHub** e da API do **Google**, então algumas configurações são necessárias para que tudo funcione corretamente.
 
 ## 📌 Pré-requisitos
 
@@ -42,7 +42,9 @@ Antes de começar, certifique-se de ter instalado:
    GITHUB_API=https://api.github.com
    GITHUB_USER=seu-usuario
    GITHUB_REPO_README=seu-usuario
-   WEBSITE_API=sua-url-da-api
+   WEBSITE_API=url-do-site
+   GOOGLE_CREDENTIALS_BASE64=credenciais-google-condificada-para-base64
+   GOOGLE_DOC_ID=id-do-documento
    ```
 
 4. **Gerando uma Personal Access Token (PAT) no GitHub**  
@@ -102,6 +104,18 @@ Crie um repositório com o mesmo nome do seu usuário no GitHub e adicione um ar
 ```
 
 Obs: na seção "carreira" pode ser colocado várias empresas, assim como a seção de "cargo e período" que são separados pela barra. Na seção "Tecnologias" também podem ser colocadas várias separadas por um espaço em branco, seguindo o de badge padrão do [Shields.io](https://shields.io/)
+
+## 📄 Google Docs API
+
+O download do currículo é feito pela API do Google, pode ser utilizado qualquer formato, mas eu utilizo o docx para poder sempre deixar o currículo atualizado.
+
+Para utilizar a API do Google a ter acesso ao seu arquivo alguns passos precisam ser executados:
+
+- Primeiro é preciso criar um projeto em [Google Cloud Console](https://console.cloud.google.com)
+- No painel do projeto escolher as apis que serão ativas: Google Drive API e Google Docs API
+- Em credenciais criar uma conta de serviço
+- Após a conta criada procurar a aba chaves e ir em adicionar chave(um arquivo json será gerado)
+- Use alguma ferramenta para transformar em base64 e cole na variável de ambiente
 
 ---
 
